@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E0043"
+    tools:context=".Fragments.GameFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="12">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+            <TextView
+                android:id="@+id/txt_turn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O Oyuncusunun Sırası"
+                android:textSize="35dp"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txt_win_O"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="O:  0"
+                android:textColor="#FDE300"/>
+            <TextView
+                android:id="@+id/txt_win_X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="X:  0"
+                android:textColor="#FF1100"
+                android:layout_marginLeft="40dp"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:padding="20dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_chessboard"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/img_stroke"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_btn"
+                android:text="Yeni Oyun"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_win"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+        <ImageView
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="12">
+            <ImageView
+                android:id="@+id/img_win"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/o"/>
+            <TextView
+                android:id="@+id/txt_win"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kazandı"
+                android:textSize="55sp"
+                android:textColor="#F8DF00"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:weightSum="6">
+                <Button
+                    android:id="@+id/btn_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn"
+                    android:text="  Tekrar Oyna  "
+                    android:textSize="20sp"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/btn_home"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_btn"
+                    android:text=" Ana Menü "
+                    android:textSize="0sp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
